@@ -8,7 +8,7 @@ class SetBoxPrototype1Extension(inkex.Effect):
         pars.add_argument("--box_color_green", type=inkex.Boolean, default=True, help="Box fill color")
         pars.add_argument("--box_color_blue", type=inkex.Boolean, default=False, help="Box fill color")
         pars.add_argument("--box_color_pink", type=inkex.Boolean, default=False, help="Box fill color")
-        pars.add_argument("--border_black_or_white", type=inkex.Boolean default=True)
+        pars.add_argument("--border_black_or_white", type=inkex.Boolean, default=True)
         pars.add_argument("--box_width", type=int, default=60, help="Box width")
         pars.add_argument("--box_height", type=int, default=20, help="Box height")
         pars.add_argument("--text_size", type=int, default=7.5, help="Font size")
