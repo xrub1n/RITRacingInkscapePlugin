@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <name>Create Text Box</name>
+  <id>org.inkscape.rit_racing.create_text_box</id>
+  
+  <param name="text_content" type="string" gui-text="Text:">Sample Text</param>
+  <param name="box_color" type="color" gui-text="Box Color:">4278190335</param>
+  <param name="box_width" type="int" min="50" max="1000" gui-text="Box Width:">200</param>
+  <param name="box_height" type="int" min="50" max="1000" gui-text="Box Height:">100</param>
+  <param name="text_size" type="int" min="8" max="144" gui-text="Font Size:">24</param>
+  
+  <effect>
+    <effects-menu>
+      <submenu name="RIT Racing"/>
+    </effects-menu>
+  </effect>
+  <script>
+    <command location="inx" interpreter="python">set_box_prototype1_extension.py</command>
+  </script>
+</inkscape-extension>
