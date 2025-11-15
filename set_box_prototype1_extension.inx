@@ -7,6 +7,14 @@
   <param name="box_color_blue" type="bool" gui-text="Box Color Blue:">false</param>
   <param name="box_color_pink" type="bool" gui-text="Box Color Pink:">false</param>
   <param name="border_black_or_white" type="bool" gui-text="Border Color White or Black">true</param>
+  
+  <!-- <param name="color_green" type="color" gui-text="green color">green hex here</param>
+  <param name="color_blue" type="color" gui-text="blue color">blue hex here</param>
+  <param name="color_pink" type="color" gui-text="pink color">pink hex here</param>
+  <param name="color_white" type="color" gui-text="white color">white hex here</param>
+  <param name="color_black" type="color" gui-text="greeblack color">black hex here</param> -->
+
+
   <!-- <param name="box_width" type="int" min="50" max="1000" gui-text="Box Width:">200</param>
   <param name="box_height" type="int" min="50" max="1000" gui-text="Box Height:">100</param>
   <param name="text_size" type="int" min="8" max="144" gui-text="Font Size:">7.5</param> -->
