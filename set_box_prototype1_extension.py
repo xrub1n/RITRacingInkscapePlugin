@@ -11,7 +11,7 @@ class SetBoxPrototype1Extension(inkex.Effect):
         pars.add_argument("--border_black_or_white", type=inkex.Boolean, default=False, help="Border black or white")
         pars.add_argument("--green_color", type=inkex.Color, default=inkex.Color("#b6d6a8"), help="Color green")  #setting each color up as a variable so it can be passed into other functions
         pars.add_argument("--blue_color", type=inkex.Color, default=inkex.Color("#2596be"), help="Color blue")
-        pars.add_argument("--pink_color", type=inkex.Color, default=inkex.Color("#9d579"), help="Color pink")
+        pars.add_argument("--pink_color", type=inkex.Color, default=inkex.Color("#9d5791"), help="Color pink")
         pars.add_argument("--white_color", type=inkex.Color, default=inkex.Color("#FFFFFF"), help="Color white")
         pars.add_argument("--black_color", type=inkex.Color, default=inkex.Color("#000000"), help="Color black")
         pars.add_argument("--box_width", type=int, default=60, help="Box width")
@@ -34,6 +34,8 @@ class SetBoxPrototype1Extension(inkex.Effect):
         box_width = self.options.box_width
         box_height = self.options.box_height
         text_size = self.options.text_size
+        color_hex = green_color #using a global variable to set what color the box is, if nothing is selected it SHOULD default to green
+        border_color = "" #similiar to color hex, using global variable to define the outline color. 
 
 
         
@@ -43,7 +45,27 @@ class SetBoxPrototype1Extension(inkex.Effect):
         layer = self.svg.get_current_layer()
         group = inkex.etree.SubElement(layer, SVG_NS + 'g', id=self.svg.get_unique_id('text_box_group_'))
 
-        
+        if box_color_green:   #when one option is selected, it will set the global variable color_hex to the predefined argument color, in this case green
+            color_hex = green_color
+        else:
+            pass  #if the output is false or the box is not checked, it will simply just skip over the function
+
+        if box_color_blue:
+            color_hex = blue_color
+        else:
+            pass  
+
+        if box_color_pink:
+            color_hex = pink_color
+        else:
+            pass
+
+        if border_black_or_white:   #similair to box color, expect selcted is white, and unselected is black.
+            border_color = white_color
+        else:
+            border_color = black_color
+
+
 
         # Create rectangle (box)
         rect_attribs = {
@@ -51,22 +73,9 @@ class SetBoxPrototype1Extension(inkex.Effect):
             'y': '0',
             'width': str(box_width),
             'height': str(box_height),
-            'style': f'fill:{green_color};stroke:{black_color};stroke-width:1' #default as green, then try to swap the color depending on if the user selected something else
+            'style': f'fill:{color_hex};stroke:{border_color};stroke-width:1' #default as green, then try to swap the color depending on if the user selected something else
 
-            # if box_color_blue:
-            #     elem.style.set_color(self.options.color_blue, 'fill')  #if blue was picked, swap the fill color to blue
-            # else:
-            #     pass  #otherwise just skip the function
             
-            # if box_color_pink:
-            #     elem.style.set_color(self.options.color_pink, 'fill') #same as blue
-            # else:
-            #     pass  #see blue else
-
-            # if border_black_or_white:    #defaults to already being black
-            #     pass                        
-            # else:
-            #     elem.style.set_color(self.options.color_white, 'stroke')   #if the user selects the box it turns the border white. Swap this from bool later
         }
         inkex.etree.SubElement(group, SVG_NS + 'rect', rect_attribs)
 
