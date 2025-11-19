@@ -85,7 +85,7 @@ class SetBoxPrototype1Extension(inkex.Effect):
             'x': str(box_width / 2),
             'y': str(box_height / 2),
             # center horizontally and vertically
-            'style': f'font-size:{text_size}px;text-anchor:middle;dominant-baseline:middle;fill:#000000;font-family:Arial, Helvetica, sans-serif'
+            'style': f'font-size:{10};text-anchor:middle;dominant-baseline:middle;fill:#000000;font-family:Arial, Helvetica, sans-serif'
         }
         text_el = inkex.etree.SubElement(group, SVG_NS + 'text', text_attribs)
         text_el.text = text_content
