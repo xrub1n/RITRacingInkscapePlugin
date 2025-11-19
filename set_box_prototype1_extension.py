@@ -10,8 +10,8 @@ class SetBoxPrototype1Extension(inkex.Effect):
         pars.add_argument("--border_color", type=str, dest="border_color", default="4", help="Bar for options")
 
         pars.add_argument("--green_color", type=inkex.Color, default=inkex.Color("#b6d6a8"), help="Color green")  #setting each color up as a variable so it can be passed into other functions
-        pars.add_argument("--blue_color", type=inkex.Color, default=inkex.Color("#2596be"), help="Color blue")
-        pars.add_argument("--pink_color", type=inkex.Color, default=inkex.Color("#9d5791"), help="Color pink")
+        pars.add_argument("--blue_color", type=inkex.Color, default=inkex.Color("#69a4d9"), help="Color blue")
+        pars.add_argument("--pink_color", type=inkex.Color, default=inkex.Color("#b665a8"), help="Color pink")
         pars.add_argument("--white_color", type=inkex.Color, default=inkex.Color("#FFFFFF"), help="Color white")
         pars.add_argument("--black_color", type=inkex.Color, default=inkex.Color("#000000"), help="Color black")
 
