@@ -6,16 +6,8 @@ class SetBoxPrototype1Extension(inkex.Effect):
         """Add extension parameters."""  
         pars.add_argument("--text_content", type=str, default="Sample Text", help="Text to display")
 
-        pars.add_argument("--box_color_green", type=inkex.Boolean, default=True, help="Box fill color")
-        pars.add_argument("--box_color_blue", type=inkex.Boolean, default=False, help="Box fill color")
-        pars.add_argument("--box_color_pink", type=inkex.Boolean, default=False, help="Box fill color")
-
-        pars.add_argument("--border_black_or_white", type=inkex.Boolean, default=False, help="Border black or white")
-
         pars.add_argument("--box_color", type=str, dest="box_color", default="1", help="Bar for options")
-
-
-        pars.add_argument("--border_color", type=str, dest="border_color", default="Black", help="Bar for options")
+        pars.add_argument("--border_color", type=str, dest="border_color", default="4", help="Bar for options")
 
         pars.add_argument("--green_color", type=inkex.Color, default=inkex.Color("#b6d6a8"), help="Color green")  #setting each color up as a variable so it can be passed into other functions
         pars.add_argument("--blue_color", type=inkex.Color, default=inkex.Color("#2596be"), help="Color blue")
@@ -31,12 +23,8 @@ class SetBoxPrototype1Extension(inkex.Effect):
         """Main effect method called when extension is executed."""
         # Get parameters
         text_content = self.options.text_content
-        box_color_green = self.options.box_color_green
-        box_color_blue = self.options.box_color_blue   
-        box_color_pink = self.options.box_color_pink
-        border_black_or_white = self.options.border_black_or_white
 
-        box_color = self.options.box_color
+        box_color = self.options.box_color   
         border_color = self.options.border_color
 
         green_color = self.options.green_color
@@ -44,7 +32,6 @@ class SetBoxPrototype1Extension(inkex.Effect):
         pink_color = self.options.pink_color
         black_color = self.options.black_color
         white_color = self.options.white_color
-
 
         box_width = self.options.box_width
         box_height = self.options.box_height
@@ -72,32 +59,10 @@ class SetBoxPrototype1Extension(inkex.Effect):
             color_hex = pink_color
 
 
-        # if border_color == "4":
-        #     border_hex = black_color
-        # elif border_color == "5":
-        #     border_hex = white_color
-        
-
-
-        # if box_color_green:   #when one option is selected, it will set the global variable color_hex to the predefined argument color, in this case green
-        #     color_hex = green_color
-        # else:
-        #     pass  #if the output is false or the box is not checked, it will simply just skip over the function
-
-        # if box_color_blue:
-        #     color_hex = blue_color
-        # else:
-        #     pass  
-
-        # if box_color_pink:
-        #     color_hex = pink_color
-        # else:
-        #     pass
-
-        if border_black_or_white:   #similair to box color, expect selcted is white, and unselected is black.
-            border_hex = white_color
-        else:
+        if border_color == "4":
             border_hex = black_color
+        elif border_color == "5":
+            border_hex = white_color
 
 
 
